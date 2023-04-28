@@ -62,5 +62,5 @@ The **main** branch receives changes ONLY when there is a new release in the **f
 
 ### Version Notation
 All version tagging, regardless of the branch, should be of the form 
-**\[COMMUNITY MS3 FIRMWARE MAJOR\].\[COMMUNITY MS3 FIRMWARE MINOR\]**. For example, Community MS3 Firmware release 1.0 on 
-the **features** branch would be tagged **features-1.0**.
+**\[MAJOR\].\[MINOR\].\[PATCH\]**. For example, Community MS3 Firmware release 1.0.0 on 
+the **features** branch would be tagged **features-1.0.0**.

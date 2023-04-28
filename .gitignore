@@ -1,6 +1,9 @@
 # JetBrains Project Files
 .idea/
 
+# Release files
+/release
+
 # Prerequisites
 *.d
 
