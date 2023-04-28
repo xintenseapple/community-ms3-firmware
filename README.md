@@ -53,7 +53,7 @@ using tags of the form **\[BRANCH NAME\]-v\[VERSION\]**. See [Version Notation](
 
 Any branches for new features, feature bugfixes, or original bugfixes should be created using the **feature/\[NAME\]**, 
 **feature-bugfix/\[NAME\]**, or **original-bugfix/\[NAME\]** formats respectively. When complete, these can be merged 
-into their respective base branch.
+into their respective base branches.
 
 ### Main Branch
 The **main** branch receives changes ONLY when there is a new release in the **features**, **feature-bugfixes**, or 
