@@ -6,7 +6,7 @@
 3. [Liability](#liability)
 4. [Branches and Tagging](#branches-and-tagging)
    1. [Features and Bugfixes](#features-and-bugfixes)
-   2. [Main](#main)
+   2. [Main Branch](#main-branch)
    3. [Version Notation](#version-notation)
 
 ## Licensing
@@ -53,7 +53,7 @@ Both the **features** and **bugfixes** branches have their own unique release no
 Any branches for new features or bugfixes should be created using the **feature/[FEATURE NAME]** or 
 **bugfix/[BUGFIX NAME]** formats respectively.
 
-### Main
+### Main Branch
 The **main** branch receives changes from both the **features** and **bugfixes** branches when a new release is created
 in either branch. The **main** branch uses its own unique release notations using tags of the form **v[MAIN VERSION]**.
 
