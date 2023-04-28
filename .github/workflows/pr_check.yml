@@ -1,0 +1,35 @@
+name: 'Pull Request Check'
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    branches:
+      - main
+      - features
+      - feature-bugfixes
+      - original-bugfixes
+
+jobs:
+  pr_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Main Pull Request
+        if: ${{ github.base_ref == 'main' && (github.head_ref != 'features' || github.head_ref != 'feature-bugfixes' || github.head_ref != 'original-bugfixes) }}
+        run: |
+          echo ${{ format("ERROR: You cannot merge to main from {0}.", github.head_ref) }}
+          exit 1
+      - name: Check Features Pull Request
+        if: ${{ github.base_ref == 'features' && !startsWith(github.head_ref, 'features/') }}
+        run: |
+          echo ${{ format("ERROR: You cannot merge to main from {0}.", github.head_ref) }}
+          exit 1
+      - name: Check Features Bugfix Pull Request
+        if: ${{ github.base_ref == 'feature-bugfixes' && !startsWith(github.head_ref, 'feature-bugfixes/') }}
+        run: |
+          echo ${{ format("ERROR: You cannot merge to main from {0}.", github.head_ref) }}
+          exit 1
+      - name: Check Original Bugfix Pull Request
+        if: ${{ github.base_ref == 'original-bugfixes' && !startsWith(github.head_ref, 'original-bugfixes/') }}
+        run: |
+          echo ${{ format("ERROR: You cannot merge to main from {0}.", github.head_ref) }}
+          exit 1
