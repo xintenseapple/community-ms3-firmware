@@ -43,21 +43,24 @@ There are two unique branches specific to this repository: **features** and **bu
 partition the types of changes made to the MS3 firmware. 
 
 ### Features and Bugfixes
-The **features** branch receives ONLY code changes that add or modify NEW features in the MS3 firmware. The 
-**bugfixes** branch receives ONLY code changes that fix bugs ALREADY present in the original MS3 firmware -- please 
-note that this does not include bug fixes for new features!
+The **features** branch receives ONLY code changes that add or modify NEW features in the Community MS3 Firmware. The 
+**feature-bugfixes** branch receives ONLY code changes that fix bugs in previously merged features in the Community MS3 
+Firmware. The **original-bugfixes** branch receives ONLY code changes that fix bugs ALREADY present in the original MS3 
+firmware -- please note that this does not include bug fixes for new features!
 
-Both the **features** and **bugfixes** branches have their own unique release notations using tags of the form 
-**feature-v[FEATURE VERSION]** or **bugfix-v[BUGFIX VERSION]**, respectively.
+The **features**, **feature-bugfixes**, and **original-bugfixes** branches have their own unique release notations 
+using tags of the form **\[BRANCH NAME\]-v\[VERSION\]**. See [Version Notation](#version-notation) for an example.
 
-Any branches for new features or bugfixes should be created using the **feature/[FEATURE NAME]** or 
-**bugfix/[BUGFIX NAME]** formats respectively.
+Any branches for new features, feature bugfixes, or original bugfixes should be created using the **feature/\[NAME\]**, 
+**feature-bugfix/\[NAME\]**, or **original-bugfix/\[NAME\]** formats respectively. When complete, these can be merged 
+into their respective base branch.
 
 ### Main Branch
-The **main** branch receives changes from both the **features** and **bugfixes** branches when a new release is created
-in either branch. The **main** branch uses its own unique release notations using tags of the form **v[MAIN VERSION]**.
+The **main** branch receives changes ONLY when there is a new release in the **features**, **feature-bugfixes**, or 
+**original-bugfixes** branches. The **main** branch uses its own unique release notations using tags of the form 
+**v\[MAIN VERSION\]**.
 
 ### Version Notation
-All version tagging, regardless of use in the **FEATURES**, **BUGFIXES**, or **MAIN** branches, should be of the form 
-**[COMMUNITY MS3 FIRMWARE MAJOR].[COMMUNITY MS3 FIRMWARE MINOR]** For example, Community MS3 Firmware release 1.0 on 
+All version tagging, regardless of the branch, should be of the form 
+**\[COMMUNITY MS3 FIRMWARE MAJOR\].\[COMMUNITY MS3 FIRMWARE MINOR\]**. For example, Community MS3 Firmware release 1.0 on 
 the **features** branch would be tagged **features-1.0**.
