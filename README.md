@@ -59,6 +59,5 @@ in either branch. The **main** branch uses its own unique release notations usin
 
 ### Version Notation
 All version tagging, regardless of use in the **FEATURES**, **BUGFIXES**, or **MAIN** branches, should be of the form 
-**[COMMUNITY MS3 FIRMWARE MAJOR].[COMMUNITY MS3 FIRMWARE MINOR]**
-For example, Community MS3 Firmware release 1.0 on the **features** branch based on original MS3 firmware version 1.4.0 
-would be tagged **features-1.0**.
+**[COMMUNITY MS3 FIRMWARE MAJOR].[COMMUNITY MS3 FIRMWARE MINOR]** For example, Community MS3 Firmware release 1.0 on 
+the **features** branch would be tagged **features-1.0**.
