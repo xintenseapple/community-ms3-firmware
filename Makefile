@@ -86,7 +86,7 @@ OBJCOPYARGS=--output-target=srec \
 	--only-section=.vectors  --change-section-lma  .vectors=0x7fef10
 
 #default
-all:	ms3
+all:	ms3 ms3pro
 
 ms3:	setms3 ms3.s19
 ms3pro:	setms3pro ms3pro.s19
@@ -117,8 +117,9 @@ ms3_defines.h:
 	
 release: all
 	rm -rf release
-	mkdir release
-	cp megasquirt-ii.ini.ms3 ms3.s19 copyini.bat ms2dl.exe utils/CHOICE.COM utils/download-MS2-firmware.bat README.txt release
+	mkdir release release/ms3 release/ms3pro
+	cp ms3.s19 ms3.ini README.md release/ms3
+	cp ms3pro.s19 ms3pro.ini README.md release/ms3pro
 	# Make sure you updated sigs.c
 
 $(AOBJS): %.o: %.s ms3h_defines.inc
@@ -155,5 +156,8 @@ ms3.dmp: ms3.elf
 clean:
 	$(RM)  ms3.elf ms3*.s19 ms3.dmp ms3.map *~ ms3_main_vars.h ms3_defines.h ms3h_defines.inc ms3*.ini
 	$(RM) $(OBJS) $(AOBJS) $(XOBJS)
-	$(RM) -r release
 	$(RM) opt.h
+
+.PHONY: clean-release
+clean-release:
+	$(RM) -r release
