@@ -1,3 +1,6 @@
+# JetBrains Project Files
+.idea/
+
 # Prerequisites
 *.d
 
